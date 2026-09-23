@@ -1,6 +1,7 @@
 # cursor-agent-sync-mcp
 
-[![npm](https://img.shields.io/npm/v/cursor-agent-sync-mcp?color=cb3837)](https://www.npmjs.com/package/cursor-agent-sync-mcp)
+[![npm](https://img.shields.io/npm/v/cursor-agent-sync-mcp?label=npmjs.org&color=cb3837)](https://www.npmjs.com/package/cursor-agent-sync-mcp)
+[![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-%40yuriisamohvalov--creator%2Fcursor--agent--sync--mcp-24292e?logo=github)](https://github.com/yuriisamohvalov-creator/cursor-mcp/pkgs/npm/cursor-agent-sync-mcp)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 MCP-сервер, который позволяет Claude Code (или любому другому MCP-клиенту)
@@ -39,6 +40,22 @@ npm install -g cursor-agent-sync-mcp
 git clone git@github.com:yuriisamohvalov-creator/cursor-mcp.git ~/tools/cursor-mcp
 cd ~/tools/cursor-mcp
 npm install
+```
+
+### Вариант 3 — из GitHub Packages
+
+Тот же пакет также зеркалирован в GitHub Packages под именем
+[`@yuriisamohvalov-creator/cursor-agent-sync-mcp`](https://github.com/yuriisamohvalov-creator/cursor-mcp/pkgs/npm/cursor-agent-sync-mcp).
+**Важно:** в отличие от npmjs.org, GitHub Packages требует аутентификации
+даже для доступа к пакету (репозиторий приватный) — понадобится `.npmrc`
+со scoped-registry и GitHub-токеном с правом `read:packages`:
+
+```bash
+# ~/.npmrc или в проекте
+echo "@yuriisamohvalov-creator:registry=https://npm.pkg.github.com" >> ~/.npmrc
+npm login --registry=https://npm.pkg.github.com --scope=@yuriisamohvalov-creator
+
+npm install -g @yuriisamohvalov-creator/cursor-agent-sync-mcp
 ```
 
 ## Подключение к Claude Code
