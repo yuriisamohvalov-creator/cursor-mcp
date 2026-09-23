@@ -1,6 +1,6 @@
 {
   "name": "cursor-agent-sync-mcp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "MCP server that lets Claude Code (or any MCP client) delegate bounded coding tasks to the local cursor-agent CLI synchronously, no spawn/check/kill cycle",
   "license": "MIT",
   "type": "module",
