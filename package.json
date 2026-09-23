@@ -1,0 +1,23 @@
+{
+  "name": "cursor-agent-sync-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that lets Claude Code (or any MCP client) delegate bounded coding tasks to the local cursor-agent CLI synchronously, no spawn/check/kill cycle",
+  "license": "MIT",
+  "type": "module",
+  "main": "server.mjs",
+  "bin": {
+    "cursor-agent-sync-mcp": "server.mjs"
+  },
+  "files": [
+    "server.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.6.5"
+  }
+}
