@@ -1,5 +1,8 @@
 # cursor-agent-sync-mcp
 
+[![npm](https://img.shields.io/npm/v/cursor-agent-sync-mcp?color=cb3837)](https://www.npmjs.com/package/cursor-agent-sync-mcp)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 MCP-сервер, который позволяет Claude Code (или любому другому MCP-клиенту)
 делегировать выполнение ограниченных задач по написанию кода локальному
 [`cursor-agent`](https://cursor.com) CLI. Один инструмент —
@@ -21,6 +24,17 @@ json --force`, дожидается завершения и возвращает
 
 ## Установка
 
+### Вариант 1 — из npm (рекомендуется)
+
+Пакет опубликован как [`cursor-agent-sync-mcp`](https://www.npmjs.com/package/cursor-agent-sync-mcp)
+— полностью публичный, ставится без авторизации:
+
+```bash
+npm install -g cursor-agent-sync-mcp
+```
+
+### Вариант 2 — из исходников
+
 ```bash
 git clone git@github.com:yuriisamohvalov-creator/cursor-mcp.git ~/tools/cursor-mcp
 cd ~/tools/cursor-mcp
@@ -28,6 +42,15 @@ npm install
 ```
 
 ## Подключение к Claude Code
+
+При установке из npm (`npm install -g cursor-agent-sync-mcp`) бинарник
+уже в `PATH`:
+
+```bash
+claude mcp add --scope user cursor -- cursor-agent-sync-mcp
+```
+
+При установке из исходников:
 
 ```bash
 NODE_BIN="$(which node)"
