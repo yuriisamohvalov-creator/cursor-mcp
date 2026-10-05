@@ -119,6 +119,13 @@ claude mcp get cursor
 - Не подменяет ревью: вызывающая сторона должна самостоятельно проверять
   `diffStat`/`statusShort`, а не доверять только полю `ok`.
 
+## Связанные пакеты
+
+Тот же синхронный паттерн:
+[`opencode-v2-mcp`](https://github.com/yuriisamohvalov-creator/opencode-mcp),
+[`codex-cli-sync-mcp`](https://github.com/yuriisamohvalov-creator/codex-mcp),
+[`cline-sync-mcp`](https://github.com/yuriisamohvalov-creator/cline-mcp).
+
 ## Лицензия
 
 MIT
