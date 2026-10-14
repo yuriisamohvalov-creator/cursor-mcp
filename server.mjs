@@ -6,6 +6,8 @@ import { spawn, execFile } from "node:child_process";
 import { promisify } from "node:util";
 
 const execFileP = promisify(execFile);
+// Resolve the CLI portably: explicit override, else PATH lookup.
+const CURSOR_BIN = process.env.CURSOR_BIN || "cursor-agent";
 const MAX_TEXT_CHARS = 12_000;
 const MAX_TAIL_CHARS = 4_000;
 
@@ -38,7 +40,7 @@ async function runCursorAgent(input) {
   args.push(input.task);
 
   return await new Promise((resolve) => {
-    const child = spawn("/home/ysamohvalov/.local/bin/cursor-agent", args, {
+    const child = spawn(CURSOR_BIN, args, {
       cwd: input.cwd,
       env: process.env,
       stdio: ["ignore", "pipe", "pipe"],
@@ -69,7 +71,7 @@ async function runCursorAgent(input) {
       clearTimeout(timer);
       resolve({
         ok: false,
-        error: `Failed to spawn cursor-agent: ${error.message}`,
+        error: `Failed to spawn ${CURSOR_BIN}: ${error.message}. Set CURSOR_BIN to the cursor-agent binary path if it is not on PATH.`,
         args,
         cwd: input.cwd,
       });
